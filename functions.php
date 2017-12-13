@@ -1,52 +1,20 @@
 <?php
-  # FUNCTION - Block of code that can b repeatedly called
+const BR = '<br />';
 
-  /*
-    Camel Case - myFunction()
-    Lower Case - my_function()
-    Pascal Case - MyFunction() - used for classes for objects
-  */
-// Create Simple Funciton  -- User Defined functions
-  function simpleFunction(){
-    echo 'Hello World';
-    echo '<br>';
-  }
+echo multiply (5, 6);
 
-// Run simple Funciton
-//simpleFunction();
-
-// Function With Param
-function sayHello($name = 'World'){
-  echo "Hello $name<br>";
+function multiply($one, $two){
+    echo $one * $two;
 }
 
-//sayHello('Joe');
-//sayHello('Bob');
-//sayHello();
+echo BR;
 
-# Return value from functions
-function addNumbers($num1, $num2){
-  return $num1 + $num2;
+multiply(5, 10);
+
+function print_info(array $info) {
+    print_r($info);
 }
 
-// echo addNumbers(2,3);
 
-# Passing Arguments by refference
-// one will minipulate addNumbers
 
-$myNum = 10;
-
-function addFive($num){
-  $num += 5;
-}
-
-function addTen(&$num){
-  $num += 10;
-}
-
-addFive($myNum);
-echo "Value: $myNum<br>";
-addTen($myNum);
-echo "Value: $myNum<br>";
-
- ?>
+?>

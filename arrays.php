@@ -1,46 +1,35 @@
 <?php
-# Aray - Variable that holds multiple values
-/*
-  - Indexed
-  - Associative
-  - Multi-dimensional
-*/
+$dir = 'movies';
 
-// Indexed
-$people = array('Keving', 'Jeremy', 'Sara');
-$ids = array(23, 55, 12);
-$cars = ['Honda', 'Toyota', 'Ford'];
-$cars[3] = 'Chevy';
-$cars[] = 'BMW';
+//scandir automatically puts files in a folder into an ArrayAccess
+$files = scandir($dir);
 
-//echo count($cars);
-//print_r($cars) // echo for arrays
-// var_dump($cars); // shows the data type for the arrays
+function pre_r($array){
+  echo <'pre'>;
+  print_r($array);
+  echo '</pre>';
+}
 
-//echo $people[1];
-//echo $ids[2];
-//echo $cars[4];
+$files = array_diff($files, array('..', '.'));
 
+$files = array_values($files);
 
-// Associative arrays //
-$people = array('Brad' => 35, 'Jose' => 32, 'Willam' => 37);
-$ids = [22 => 'Brad', 44 => 'Jose', 63 => 'William'];
-//echo $people['Brad'];
-// echo $ids['22'];
-$people['Jill'] = 42;
- // echo $people ['Jill'];
-// print_r($people)
-// var_dump($people);
+$movies = array();
 
+for($i = 0; $i < count($files); $i++){
+  preg_match("!(.*?)\((.*?)\)!",$files[$i],$results);
+  $movies[$movie_name]['image'] = $files[$i];
+  $movies[$movie_name]['year'] = $results[2];
+}
 
+echo "<table id = 'movies' cellpadding = 50>";
+echo "<tr class = 'odd'>";
 
-// Multi dimensional //
-$cars = array(
-  array('Honda', 20, 10),
-  array('Toyota', 30, 20),
-  array('Ford', 23, 12),
-);
+foreach($movies as $movie_name => $info){
+  $content = "<td><span class"  n  
+}
 
-echo $cars[2][0];
+</tr>
+</table>"
 
  ?>
